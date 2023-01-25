@@ -1,0 +1,172 @@
+---
+title: "AWS & GCP"
+author: "Marcos Augusto Daza Barbosa"
+format:
+  revealjs:
+    slide-number: true
+editor: visual
+---
+
+## Contextualização
+
+::: incremental
+-   Computação em nuvem é o novo paradigma.
+-   Tecnologia de acesso remoto a softwares, armazenamento de arquivos e processamento de dados por meio da internet.
+-   Permite maior agilidade, flexibilidade e redução de custos na infraestrutura de TI de uma companhia.
+-   As plataformas de computação em nuvem fornecem ferramentas poderosas para Big Data
+:::
+
+## Estrutura da apresentação
+
+::: columns
+::: {.incremental .column width="70%"}
+1.  Amazon Web Services
+
+-   Serviços
+-   Exemplo de arquitetura
+-   Exemplo de computação com R e EC2
+:::
+
+::: {.incremental .column width="60%"}
+2.  Google Cloud Platform Extras
+
+-   Vision AI
+-   AutoML Translation
+-   Serviços de Geolocalização
+:::
+:::
+
+# Amazon Web Services
+
+## Amazon Web Services
+
+-   AWS S3
+-   AWS Lambda
+-   AWS Glue
+-   AWS Athena
+-   AWS Quicksight
+-   Exemplo de arquitetura
+-   AWS EC2
+-   Exemplo de computação com R e EC2
+
+## AWS S3
+
+::: incremental
+-   Serviço de armazenamento de dados.
+-   Bucket: armazena qualquer tipo de arquivo que você quiser.
+-   Possui funcionalidade de versionamento.
+-   Os dados ficam disponíves para outras dezenas de ferramentas da AWS
+-   Escalável
+
+![](./src/images/s3-logo.png){.absolute bottom="0" right="-200" width="400" height="250"}
+:::
+
+## AWS Lambda
+
+::: incremental
+-   Serviço de execução de scripts em linguagem Java, Go, PowerShell, Node. js, C#, Python e Ruby.
+-   Funções Lambda podem rodar até 15 minutos.
+-   Cada ambiente de execução AWS Lambda fornece 512 MB de espaço no disco
+-   Você paga pelo tempo de execução
+
+![](./src/images/lambda-logo.png){.absolute bottom="0" right="-100" width="150" height="150"}
+:::
+
+## AWS Glue
+
+::: incremental
+-   Serviço serverless de processamento e catalogação de dados
+-   AWS Glue Data Catalog: consiste em tabelas, que são a definição metadata que representa os dados.
+-   É utilizado um crawler para popular o AWS Glue Data Catalog com tabelas, que é acionado para vasculhar os dados no S3 (ou outras fontes) e aplicar classificadores lógicos para inferir o schema, formato e tipo dos dados.
+- Esse crawler irá construir o católogo de dados usando classificadores para formatos como JSON.
+
+![](./src/images/glue-logo.jpg){.absolute bottom="0" right="-150" width="150" height="150"}
+:::
+
+## AWS Glue
+
+::: {.incremental .column width="100%"}
+-   Após a definição das tabelas do católogo, elas ficam disponíveis para ETL e fazer queries em outros serviços da AWS.
+
+![](./src/images/glue-logo.jpg){.absolute bottom="0" right="-150" width="150" height="150"}
+:::
+
+## AWS Athena
+
+::: incremental
+-   Serviço para fazer queries, criar views em linguagem SQL.
+-   Pode ser integrado com o AWS Quicksight (serviço de visualização de dados)
+
+![](./src/images/athena-logo.png){.absolute bottom="0" right="-150" width="150" height="150"}
+:::
+
+## AWS Quicksight
+
+-   Serviço de visualização de dados
+
+![](./src/images/quicksight-logo.png){.absolute bottom="0" right="-150" width="150" height="150"}
+
+## Exemplo de arquitetura
+
+![](./src/images/architeture.jpg){.absolute bottom="100" width="3500" height="350"}
+
+## AWS EC2
+
+::: incremental
+-   Aluguel de computadores virtuais, para rodar aplicações,
+-   Ampla seleção de tipos de instâncias otimizadas (combinações distintas de CPU, memória, armazenamento): [aws-ec2-instances](https://aws.amazon.com/pt/ec2/instance-types/?trk=273714db-4e14-42ba-be75-e3e36c4bc786&sc_channel=ps&s_kwcid=AL!4422!3!589890540382!e!!g!!aws%20ec2&ef_id=Cj0KCQiAlKmeBhCkARIsAHy7WVvWdRGsPJmjalLvXZV89KkSUJCeKeYj6JYTFBNJbo0muuFBPLWHfdsaAqPREALw_wcB:G:s&s_kwcid=AL!4422!3!589890540382!e!!g!!aws%20ec2)
+
+![](./src/images/ec2-logo.jpg){.absolute bottom="0" right="-150" width="150" height="150"}
+:::
+
+## Links
+
+-   Para explorar serviços com camada grátis: [aws-free-tier](https://aws.amazon.com/pt/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
+
+-   Para explorar certificações: [certifications](https://aws.amazon.com/pt/certification/)
+
+-   Para criar instância EC2 com R: [setup-rstudio-amazon-machine-image](https://blog.davisvaughan.com/posts/2017-05-15-rstudio-shiny-server-and-aws/)
+
+-   Para conectar com instância EC2 [remote-ec2](https://furrr.futureverse.org/articles/remote-connections.html)
+
+# Google Cloud Platform Extras
+
+## Google Cloud Platform Extras
+
+-   Vision AI
+-   AutoML Translation
+-   Serviços de Geolocalização
+
+## Vision AI
+
+::: incremental
+-   Serviço para criar aplicativos de visão computacional, coletar insights de imagens com API's, AutoML ou modelos personalidados pré-treinados
+-   Exemplos: rotular e classificar imagens, detectar objetos, ler textos impressos e manuscritos, criar metadados valioso de um católogo de imagens.
+-   Lista de features: [features-documentation](https://cloud.google.com/vision/docs/features-list)
+:::
+
+## AutoML Translation
+
+::: incremental
+-   Serviço para tradução de texto, por meio ajuste automático de modelo de machine learning
+-   Google Neural Machine Translation (NMT) é a ferramenta default para tradução em tarefas genéricas.
+-   No caso, AutoML translation inicializa com um modelo Google NMT e, em seguida, é feito um fine-tuning no modelo para ajustar aos dados de treino, fornecidos pelo usuário.
+:::
+
+## AutoML Translation
+
+::: incremental
+-   Basta o usuário dar como input pares de sentenças na linguagem fonte e na linguagem alvo, e.g, ("Here comes the sun", "Aí vem o sol"). O modelo customizado irá, de modo geral, possuir melhor performance para tarefas específicas.
+- Documentação: [auto-ml-translation](https://cloud.google.com/translate/automl/docs?hl=pt-br)
+:::
+
+## Serviços de Geolocalização
+
+::: incremental
+-   Geocoding API
+-   Distance Matrix API
+-   Directions API
+-   Places API
+:::
+
+# Obrigado!
